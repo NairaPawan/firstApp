@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+	<script src="formValidation.js"></script>
+	<style>
+		#myForm {
+			background-color: #f2f2f2;
+			padding: 20px;
+			border: 1px solid #b91818;
+			border-radius: 5px;
+			width: 300px;
+			margin: 0 auto;
+			margin-top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="myForm" onsubmit="return validateForm()">
+		<label for="fname">Full Name:</label><br>
+		<input type="text" id="fname" name="fname" required><br>
+		<label for="email">Email ID:</label><br>
+		<input type="email" id="email" name="email" required><br>
+		<label for="city">City:</label><br>
+		<select id="city" name="city" required>
+			<option value="" disabled selected>Select City</option>
+			<option value="punjab">City 1</option>
+			<option value="delhi">City 2</option>
+			<option value="jharkhand">City 3</option>
+			<option value="kasmir">City 4</option>
+			<option value="chennai">City 5</option>
+		</select><br>
+		<label for="geneder">Gender:</label><br>
+		<input type="radio" id="male" name="geneder" value="male" required>
+		<label for="male">Male</label><br>
+		<input type="radio" id="female" name="geneder" value="female">
+		<label for="female">Female</label><br>
+		<label for="password">Password:</label><br>
+		<input type="password" id="password" name="password" required><br>
+		<input type="checkbox" id="terms" name="terms" value="agree" required>
+		<label for="terms"> I agree to the terms and conditions</label><br>
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+	</div>
+</body>
+</html>

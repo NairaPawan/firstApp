@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Form</title>
+    <style>
+        #myForm {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid #18b963;
+            border-radius: 5px;
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="myForm">
+        <label for="fname">Full Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <span id="fnameError" class="error"></span><br>
+
+        <label for="email">Email ID:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <span id="emailError" class="error"></span><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <span id="passwordError" class="error"></span><br>
+
+        <button onclick="validateForm()">Validate Form</button>
+        <button onclick="resetForm()">Reset Form</button>
+        <button onclick="submitForm()">Submit Form</button>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Simple validation for demonstration purposes
+            var fname = document.getElementById('fname').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            var isValid = true;
+
+            if (fname === "") {
+                document.getElementById('fnameError').innerText = "Full Name is required";
+                isValid = false;
+            } else {
+                document.getElementById('fnameError').innerText = "";
+            }
+
+            if (email === "") {
+                document.getElementById('emailError').innerText = "Email is required";
+                isValid = false;
+            } else {
+                document.getElementById('emailError').innerText = "";
+            }
+
+            if (password === "") {
+                document.getElementById('passwordError').innerText = "Password is required";
+                isValid = false;
+            } else {
+                document.getElementById('passwordError').innerText = "";
+            }
+
+            return isValid;
+        }
+
+        function resetForm() {
+            document.getElementById('fname').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('password').value = "";
+            clearErrors();
+        }
+
+        function submitForm() {
+            if (validateForm()) {
+                alert("Form submitted successfully!");
+                resetForm();
+            }
+        }
+
+        function clearErrors() {
+            document.getElementById('fnameError').innerText = "";
+            document.getElementById('emailError').innerText = "";
+            document.getElementById('passwordError').innerText = "";
+        }
+    </script>
+</body>
+</html>

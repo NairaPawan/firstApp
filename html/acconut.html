@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+	<script src="formValidation.js"></script>
+	<style>
+		#myForm {
+			background-color: #ff0000; /* Red color */
+			padding: 20px;
+			border: 1px solid #18b963;
+			border-radius: 5px;
+			width: 300px;
+			margin: 0 auto;uuuuuuuu
+		hhjhjhjhj
+			margin-top: 100px;
+		}
+
+		#thankYouMessage {
+			display: none;
+			background-color: #18b963;
+			padding: 20px;
+			border: 1px solid #ff0000;
+			border-radius: 5px;
+			width: 300px;
+			margin: 0 auto;  
+			margin-top: 20px;
+			color: #fff;
+		} 
+	</style>
+</head>
+<body>
+	<div id="myForm" onsubmit="return submitForm()">
+		<label for="fname">Full Name:</label><br>
+		<input type="text" id="fname" name="fname" required><br>
+		<label for="email">&#9993; Email ID:</label><br>
+		<input type="email" id="email" name="email" required><br>
+		<label for="city">City:</label><br>
+		<select id="city" name="city" required>
+			<option value="" disabled selected>Select City</option>
+			<option value="punjab">Punjab</option>
+			<option value="delhi">Delhi</option>
+			<option value="jharkhand">Jharkhand</option>
+			<option value="kashmir">Kashmir</option>
+			<option value="chennai">Chennai</option>
+		</select><br>
+		<label for="gender">Gender:</label><br>
+		<input type="radio" id="male" name="gender" value="male" required>
+		<label for="male">Male</label><br>
+		<input type="radio" id="female" name="gender" value="female">
+		<label for="female">Female</label><br>
+		<label for="password">Password:</label><br>
+		<input type="password" id="password" name="password" required><br>
+		<input type="checkbox" id="terms" name="terms" value="agree" required>
+		<label for="terms"> I agree to the terms and conditions</label><br>
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+	</div>
+
+	<div id="thankYouMessage">
+		Thank you for filling the form!
+	</div>
+
+	<script>
+		function submitForm() {
+			// You can perform form validation here before showing the thank you message
+
+			// Assuming the form is valid, hide the form and show the thank you message
+			document.getElementById("myForm").style.display = "none";
+			document.getElementById("thankYouMessage").style.display = "block";
+
+			// Prevent the default form submission
+			return false;
+		}
+	</script>
+</body>
+</html>
+    

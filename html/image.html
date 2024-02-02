@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Images with JavaScript</title>
+</head>
+<body>
+    <div id="imageContainer"></div>
+
+    <script>
+        // Image sources (replace these with your actual image URLs)
+        var imageSources = [
+            'https://images.app.goo.gl/nPifoinNmMbyspJf7',
+            'https://images.app.goo.gl/BL7ssFjkJmJyz8Q96',
+            'https://images.app.goo.gl/KtLjv9hpCJ9VxrN58',
+            'https://images.app.goo.gl/vhtfASGVAwZDHYNa7',
+            'https://images.app.goo.gl/msk1Dts4yyFVF49x7'
+        ];
+
+        // Function to insert images into the document
+        function insertImages() {
+            var container = document.getElementById('imageContainer');
+
+            for (var i = 0; i < imageSources.length; i++) {
+                var img = document.createElement('img');
+                img.src = imageSources[i];
+                img.alt = 'Image ' + (i + 1);
+                img.style.marginRight = '10px'; // Optional: Add some margin between images
+                container.appendChild(img);
+            }
+        }
+
+        // Call the function to insert images when the page loads
+        window.onload = insertImages;
+    </script>
+</body>
+</html>
